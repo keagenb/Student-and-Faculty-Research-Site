@@ -9,3 +9,7 @@ Requirements are listed in requirements.txt.
 To launch, run 'python research.py' then open localhost in browser. New database should be created for launched website.
 
 ![](greetingscreen.PNG)
+![](register.PNG)
+![](studentviewpos.PNG)
+![](studentapplying.PNG)
+![](facultyapps.PNG)
