@@ -7,3 +7,5 @@ Website allows users to create a profile as either a student or a faculty. Facul
 Requirements are listed in requirements.txt.
 
 To launch, run 'python research.py' then open localhost in browser. New database should be created for launched website.
+
+![](greetingscreen.png)
