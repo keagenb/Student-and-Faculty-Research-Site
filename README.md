@@ -8,4 +8,4 @@ Requirements are listed in requirements.txt.
 
 To launch, run 'python research.py' then open localhost in browser. New database should be created for launched website.
 
-![](greetingscreen.png)
+![](greetingscreen.PNG)
