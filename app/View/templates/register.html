@@ -1,0 +1,33 @@
+<html style="background-image:url('/static/img/white.jpg');">
+
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 style="text-align: center;">Register</h1>
+
+    <div style="top:20%;left:41%;text-align: center;" id="textBorder">
+
+    {% if form %}
+        <form action="" method = "post">
+            {{ form.hidden_tag() }}
+        <div class = "loginText">
+            <br> {{ form.username.label }} 
+                <br>{{form.username (style="margin:5px;")}}
+            <br>{{form.email.label}}  
+                <br> {{ form.email (style="margin:5px;")}}
+            <br>{{form.student.label}} {{ form.student (style="margin:5px;") }}
+            <br>{{form.faculty.label}} {{ form.faculty (style="margin:5px;")}}
+            <br>{{form.password.label}} 
+                <br> {{ form.password (style="margin:5px;")}}
+            <br>{{form.password2.label}} 
+                <br> {{ form.password2 (style="margin:5px;")}}
+            <br><br>{{ form.submit (style="margin:5px;")}}
+        </div>
+    {% endif %}
+
+    
+{% endblock %}
+
+</div>
+
+</html>

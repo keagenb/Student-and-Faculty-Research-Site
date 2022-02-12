@@ -1,0 +1,30 @@
+<html style="background-image:url('/static/img/white.jpg');">
+
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 style="text-align: center;">Sign In</h1>
+
+        <div style="top:20%;left:41%;text-align: center;" id="textBorder">
+
+            {% if form %}
+            <form action="" method = "post">
+                {{ form.hidden_tag() }}
+                <div  class = "loginText">
+                    <br>{{form.username.label}}
+                        <br>{{form.username(style="margin:5px;")}}
+                    <br>{{form.password.label}}
+                        <br>{{form.password(style="margin:5px;")}}
+                    <br>{{form.remember_me.label}}
+                        {{form.remember_me}}
+                    <br>{{form.submit(style="margin:15px;")}}
+                </div>
+            {% endif %}
+
+            <p class= "loginText" style="top: 50%">New User? <a href="{{url_for('auth.register')}}">Click to Register!</a></p>
+        {% endblock %}
+
+        </div>
+
+</html>
+

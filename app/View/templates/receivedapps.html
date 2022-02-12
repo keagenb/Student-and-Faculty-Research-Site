@@ -1,0 +1,49 @@
+<html style="background-image:url('/static/img/white.jpg');">
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Received Applications</h1>
+
+{% for app in current_user.get_all_applications() %}
+    {% if app.appid in current_user.get_faculty_apps() %}
+    <div class = "posttablenew" style = "width:69%" valign="top">
+    <b>Post: </b> {{current_user.find_post_from_app(app).project_title}} <b>Post ID:</b> {{app.appid}}
+    <br>
+    <b>Description: </b>{{current_user.find_post_from_app(app).description}}
+    <br> 
+    <br>
+    <b>Applicant: </b>{{app.studentenrolled.firstname}} {{app.studentenrolled.lastname}}
+    <br>
+    <br>
+    <b>Experience: </b>{{app.studentenrolled.experience}}
+    <br>
+    <b>Major: </b>{{app.studentenrolled.major}} <b>GPA: </b>{{app.studentenrolled.gpa}}
+    <br>
+    <b>Research Fields: </b>{% for field in app.studentenrolled.research_field %}
+    {{field}}
+    {% endfor %}
+    <br>
+    <b>Languages: </b>{% for lang in app.studentenrolled.language_field %}
+    {{lang}}
+    {% endfor %}
+    <br>
+    <b>Reference: </b>{{app.reference}}
+    <br> 
+    <b>Statement: </b>{{app.statement}}
+    <br>
+    <br>
+    <b>Status: </b>{{app.status}}
+    <br>
+    <br>
+    
+    <form method="POST" action="{{ url_for('routes.status',app_id=app.appid,student_id=app.studentenrolled.id)}}">
+        {{ form.status }}
+        {{ form.submit }}
+    </form>
+
+</div>
+    {% endif %}
+</div>
+{% endfor %}
+{% endblock %}
+</html>

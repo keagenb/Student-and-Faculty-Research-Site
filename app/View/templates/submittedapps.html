@@ -1,0 +1,18 @@
+<html style="background-image:url('/static/img/white.jpg');">
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Submitted Apps</h1>
+{% for app in current_user.applied_apps() %}
+    {% set post = app.appenrolled %}
+    {% include '_apps.html'%}
+    <table class = "posttable" style = "width:100%" valign="top">
+    <b>Response: </b> {{current_user.get_statement(post)}}
+    <br>
+    <b>Reference: </b> {{current_user.get_reference(post)}}
+    <br>
+    <b>Status: <i>{{current_user.get_status(post)}}</i></b>
+    </table>
+{% endfor %}
+{% endblock %}
+</html>

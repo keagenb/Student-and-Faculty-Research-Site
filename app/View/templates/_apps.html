@@ -1,0 +1,89 @@
+<table class = "posttable" style = "width:100%" valign="top">
+    <tr> 
+        <td colspan="3"><div class="posttitle"> {{post.project_title}} </div>
+        </td>
+    </tr>
+    <tr>
+        <td width="80%" >
+            <div class ="postmessage">
+              <b>Description: </b>{{post.description}} 
+        </td> 
+    </tr>
+    <tr>
+        <td width="80%" >
+            <div class ="postmessage">
+                <b>Start Date: </b>{{moment(post.date1).format('LL')}} 
+        </td> 
+    </tr>
+    <tr>
+        <td width="80%" >
+            <div class ="postmessage">
+                <b>End Date: </b>{{moment(post.date2).format('LL')}} 
+        </td> 
+    </tr>
+    <tr>
+        <td width="80%" >
+            <div class ="postmessage">
+                <b>Required Hours: </b>{{post.time}} 
+        </td> 
+    </tr>
+    <tr>
+        <td width="80%" >
+            <div class ="postmessage">
+                <b>Qualifications: </b>{{post.requirements}} 
+        </td> 
+    </tr>
+    <tr>
+        <td width="80%" >
+            <div class ="postmessage">
+                <b>Faculty Info: </b>{{post.faculty_info}} 
+        </td> 
+    </tr>
+    <tr> 
+        <td colspan="3" style = "text-align:center" valign="bottom">  
+            <br>
+            <!-- include tags here -->
+            {% for tag in post.get_tags().all() %}
+                    <span class="tagitem">
+                        {{tag.field}}
+                    </span>
+                {% endfor %}
+        </td>
+    </tr>
+    
+    <tr> 
+        <td colspan="3" style = "text-align:center" valign="bottom">  
+            <br>
+            <!-- include tags here -->
+            {% for tag in post.get_lang().all() %}
+                    <span class="tagitem">
+                        {{tag.field}}
+                    </span>
+                {% endfor %}
+        </td>
+    </tr>
+
+
+
+
+    <tr>
+        <td colspan="3" style = "text-align:center" valign="bottom">  
+            <br>
+              <span class = "useritem"> Position posted by {{post.writer.username}} </span>  
+            <br>
+            {% if current_user.usertype == 'student' and not current_user.is_applied(post) %}
+            <form action="{{ url_for('routes.applyPost', postid = post.id)}}" method="post">
+                <input type="submit", value ="Apply", id='apply'> <!-- class="likebtn" -->
+            </form>
+            {% elif current_user.usertype == 'student' and current_user.is_applied(post) %}
+            <form action="{{ url_for('routes.withdrawPost', postid = post.id)}}" method="post">
+                <input type="submit", value ="Withdraw", id='withdraw'> <!-- class="likebtn" -->
+            </form>
+            {% elif current_user.usertype == 'faculty' and post.id in current_user.get_faculty_apps() %}
+            <form action="{{ url_for('routes.delete',post_id=post.id)}}" method="post">
+                <input type="submit" value="Delete">
+            </form>
+            {%endif%}
+        </td>
+    </tr>
+</table>

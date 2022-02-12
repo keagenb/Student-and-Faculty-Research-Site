@@ -1,0 +1,233 @@
+body {
+    margin: 1px 1px 1px 15px;
+    padding: 1px;
+    font-family: Tahoma;
+    text-align: left;
+  
+}
+.nav-container {
+    background:#f6f6f6;
+    font-family: Tahoma;
+    font-size: 12px;
+    height: 32px;
+    text-transform: uppercase;
+}
+a:hover {
+	color:af0737;
+}
+
+a:visited{
+    color:af0737;
+}
+
+.button {
+    width : 65px;
+    padding : 3px;    
+    font-size: 16px;
+    margin : 5px;
+    padding : 5px;
+    border: 1px solid lightgray;
+}
+.button:hover {
+    background-color: 157dd3;
+    color: white;
+    cursor:pointer;
+}
+
+.buttonLanding{
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%);
+    text-align: center;
+    width : 65px;   
+    font-size: 16px;
+    padding : 5px;
+    background-color: 231f20;
+    position: absolute;
+}
+
+.buttonLanding:link{
+    color: white;
+}
+
+.buttonLanding:visited{
+    color: white;
+}
+
+.buttonLanding:hover{
+    background-color: 2d2a26;
+    color: af0737;
+    cursor:pointer;
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+
+.useritem{
+    text-align: center;
+    padding: 3px;
+    margin: 4px 3px 4px 3px;
+    color: crimson; 
+    text-transform: uppercase;
+}
+
+
+.flash-container{
+	background: #99c5ee;
+	font-family: Tahoma;
+	font-size: 16px;
+	padding: 25px;
+	margin: 10px,0px,10px,0px;
+}
+
+.forminput{
+    text-align:left;
+    width: 62%;
+    margin: 3px;
+    padding: 3px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.studentReg{
+    text-align:left;
+    width: 62%;
+    margin: 3px;
+    padding: 3px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.FacultyReg{
+    text-align:left;
+    width: 62%;
+    margin: 3px;
+    padding: 3px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.landingLogo{
+    width: 135px;
+    top: 5%;
+    left: 2.5%;
+    position:absolute;
+}
+
+.landingBackground{
+    width: 100%;
+}
+
+.landingText{
+    top:10%;
+    text-align: center;
+    font-size: 50px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:af0737;
+    position: relative;
+}
+
+/* text-shadow: 1px 1px 5px black, 0 0 25px black, 0 0 10px black; */
+
+.loginText{
+    text-align: center;
+    font-size: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:whitesmoke;
+    margin: 3px;
+    padding: 3px;
+}
+
+
+#textBorder{
+    background-color: rgb(34, 34, 34);
+    width: 300px;
+    border: solid rgb(175, 7, 55) 3px;
+    position: absolute;
+}
+
+.postbox{
+    display: flex;
+    vertical-align: middle;
+    background-color: #99c5ee;
+    width: 15%;
+    margin: 10px 0px 10px 0px;
+    padding: 2px;
+
+    @media screen and (min-width: 800px) and (max-width:1200px){
+        width: 48%;
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 32%;
+    }
+    @media screen and (max-width: 800px) {
+        width: 99%;
+    }
+}
+
+
+.posttable { 
+    width : 100%;
+    margin: 0px;
+}
+
+.posttablenew { 
+    width : 100%;
+    margin: 8px;
+    color: black;
+    background-color: rgb(231, 231, 231);
+    padding: 4px;
+}
+
+.posttitle {
+    text-align: center;
+    font-weight: bold;
+}
+
+.post-box{
+    display: flex;
+    vertical-align: middle;
+    background-color: rgb(231, 231, 231);
+    margin: 3px;
+    width: 32%;
+    padding: 5px;
+}
+
+@media screen and (max-width:1200px){
+    .post-box{
+        display: flex;
+        vertical-align: middle;
+        background-color: rgb(233, 233, 233);
+        margin: 3px;
+        width: 32%;
+        padding: 5px;
+    }
+  }
+
+  @media screen and (min-width: 800px) and (max-width:1200px){
+    .post-box{
+        display: flex;
+        vertical-align: middle;
+        background-color: rgb(233, 233, 233);
+        margin: 3px;
+        width: 48%;
+        padding: 5px;
+    }
+  }
+
+  @media screen and (max-width: 800px){
+    .post-box{
+        display: flex;
+        vertical-align: middle;
+        background-color: rgb(233, 233, 233);
+        margin: 3px;
+        width: 99%;
+        padding: 5px;
+    }
+  }

@@ -1,0 +1,63 @@
+<html style="background-image:url('/static/img/white.jpg');">
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Apply</h1>
+
+<table class = "posttable" style = "width:100%" valign="top">
+    <tr>
+        <td width="80%" >
+            <div class ="postmessage">
+                <b>Title: </b>{{post.project_title}}
+            </div>
+        </td>
+    <tr>
+        <td width="80%" >
+            <div class ="postmessage">
+              <b>Description: </b>{{post.description}} 
+        </td> 
+    </tr>
+    <tr>
+        <td width="80%" >
+            <div class ="postmessage">
+                <b>Start Date: </b>{{moment(post.date1).format('LL')}} 
+        </td> 
+    </tr>
+    <tr>
+        <td width="80%" >
+            <div class ="postmessage">
+                <b>End Date: </b>{{moment(post.date2).format('LL')}} 
+        </td> 
+    </tr>
+    <tr>
+        <td width="80%" >
+            <div class ="postmessage">
+                <b>Required Hours: </b>{{post.time}} 
+        </td> 
+    </tr>
+    <tr>
+        <td width="80%" >
+            <div class ="postmessage">
+                <b>Qualifications: </b>{{post.requirements}} 
+        </td> 
+    </tr>
+    <tr>
+        <td width="80%" >
+            <div class ="postmessage">
+                <b>Faculty Info: </b>{{post.faculty_info}} 
+        </td> 
+    </tr>
+</table>
+
+<h2>Your Information</h2>
+    {% if form %}
+    <form action="" method = "post">
+        {{ form.hidden_tag() }}
+    <div>
+        {{form.statement.label}} <br>{{form.statement}}
+        <br>{{form.reference.label}} <br>{{form.reference}}
+        <br><br>{{form.apply}}
+    </div>
+    {% endif %}
+{% endblock %}
+</html>

@@ -1,0 +1,31 @@
+<html style="background-image:url('/static/img/white.jpg');">
+
+    <head>
+        {% if title %}
+           <title>{{ title }} - Research Outreach </title> <!--Update title -->
+        {% else %}
+           <title> Welcome to Reserach Outreach! </title>
+        {% endif %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+     </head>
+
+{% block content %}
+
+    <h1 class = "landingText">
+         Research Outreach 
+    </h1 >
+
+    <h1 class = "landingText" style="top:50%; font-size: 35px;">
+     #1 Source for Student Opportunities
+    </h1>
+
+    <img src="{{ url_for('static', filename = 'img//logo.jpg' )}}" class = "landingLogo"> 
+    
+        <div>
+            <a href="{{url_for('auth.login')}}" class = "buttonLanding"  style = "left: 54%">Login</a>
+            <a href="{{url_for('auth.register')}}" class = "buttonLanding"  style = "left: 46%">Click to Register!</a>
+        </div>
+{% endblock %}
+
+
+</html>

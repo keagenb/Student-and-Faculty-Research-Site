@@ -1,0 +1,27 @@
+<html style="background-image:url('/static/img/white.jpg');">
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Edit Profile</h1>
+
+    {% if form %}
+    <form action="" method = "post">
+        {{ form.hidden_tag() }}
+    <div>
+        {{form.firstname.label}} <br>{{form.firstname}}
+        <br>{{form.lastname.label}} <br>{{form.lastname}}
+        <br>{{form.phone.label}} <br>{{form.phone}}
+        {% if current_user.usertype == 'student' %}
+        <br>{{form.gpa.label}} <br>{{form.gpa}}
+        <br>{{form.major.label}} <br>{{form.major}}
+        <br>{{form.graduation.label}} <br>{{form.graduation}}
+        <br>{{form.research.label}}<br>{{form.research}}
+        <br>{{form.language.label}}<br>{{form.language}}
+        <br>{{form.experience.label}} <br>{{form.experience}}
+        {% endif %}
+        <br><br>{{form.submit}}
+    </div>
+    {% endif %}
+
+{% endblock %}
+</html>
