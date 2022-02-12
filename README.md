@@ -22,7 +22,7 @@ To launch, run 'python research.py' then open localhost in browser. New database
 
 ![](studentviewpos.PNG)
 
-# Only Students can Apply to Positions
+# Student Application Process
 
 ![](studentapplying.PNG)
 
